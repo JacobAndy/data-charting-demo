@@ -5,6 +5,7 @@ import dol from "../../data/DOL_data.tsv";
 import rates from "../../data/20180907DOLMeanVsEliteMean.csv";
 import "./style/Chart.css";
 import axios from "axios";
+import Bar from "./BarChart";
 
 class Charts extends Component {
   state = { newArray: [] };
@@ -61,9 +62,12 @@ class Charts extends Component {
   }
   render() {
     return (
-      <svg ref="svg" width="960" height="600">
-        <g className="states">{this.state.newArray}</g>
-      </svg>
+      <div>
+        <svg ref="svg" width="960" height="600">
+          {/* <g className="states">{this.state.newArray}</g> */}
+        </svg>
+        <Bar />
+      </div>
     );
     //
     //<svg width="960" height="600">
